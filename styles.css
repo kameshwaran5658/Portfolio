@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    width: 100%;
+    background: #080808;
+    color: #fff;
+    font-size: 16px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(45deg, #1a1a1a, #333);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 80px;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+ 
+
+nav {
+    display: flex;
+    align-items: center;
+    
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 4px;
+    background: #c81010;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #c81010;
+    transform: scale(1.1);
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+}
+
+nav ul.active {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home, .about, .skills, .soft-skills, .experience, .contact {
+    padding: 40px 10%;
+    background: linear-gradient(45deg, #101010, #1c1c1c);
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.home::before, .about::before, .skills::before, .soft-skills::before, .experience::before, .contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.home, .about, .skills, .soft-skills, .experience, .contact > * {
+    position: relative;
+    z-index: 2;
+}
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.h-cont {
+    flex-basis: 50%;
+    margin: 20px;
+}
+
+.h-cont p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #c81010;
+    animation: slideInLeft 1s ease;
+}
+
+.h-cont h1 {
+    font-size: 40px;
+    margin-top: 10px;
+    color: #e0e0e0 ;
+    animation: slideInLeft 1.5s ease;
+}
+
+.h-cont h1 span {
+    color: #c81010;
+}
+
+.h-img {
+    flex-basis: 40%;
+    text-align: center;
+}
+
+.h-img img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.h-img img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.resume {
+    margin-top: 20px;
+}
+
+.resume a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    padding: 8px 20px;
+    display: inline-block;
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+.resume a:hover {
+    background: #c81010;
+    border: 2px solid #c81010;
+}
+
+.about-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeInUp 1s ease;
+}
+
+.about-cont h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #c81010, #f45b5b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-cont p {
+    font-size: 18px;
+    line-height: 1.6;
+    background: linear-gradient(45deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 20px;
+}
+
+/* Skills Section */
+.skills ul, .soft-skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skills ul li, .soft-skills ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #1c1c1c;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills ul li:hover, .soft-skills ul li:hover {
+    background: #c81010;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.skills ul li i, .soft-skills ul li i {
+    color: #c81010;
+}
+
+/* Experience Section */
+.experience h2 {
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+    background: linear-gradient(45deg, #c81010, #f45b5b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: slideInRight 1s ease;
+}
+
+.experience p {
+    font-size: 18px;
+    line-height: 1.6;
+    background: linear-gradient(45deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+/* Contact Section */
+.contact p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeInUp 1.2s ease;
+}
+
+.contact p a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact p a:hover {
+    color: #c81010;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+    animation: fadeInUp 1.5s ease;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity:     1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 120px;
+    }
+    nav ul {
+        list-style: none;
+        display: none;
+        gap: 20px;
+        position: absolute;
+        top: 80px; /* Adjust as needed */
+        right: 20px;
+        background: #1a1a1a;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: #fff;
+        margin-left: 250px;
+    }
+    .home, .about, .skills, .soft-skills, .experience, .contact {
+        padding: 20px 5%;
+    }
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+    .h-cont h1 {
+        font-size: 32px;
+    }
+    .about-cont {
+        flex-direction: column;
+    }
+    nav ul.active {
+        display: block;
+        display: flex;
+        flex-direction: row; /* Ensure the navigation menu is above other elements */
+    }
+}
+
+.m h1,h2{
+    font-size: 36px;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #c81010, #f45b5b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
