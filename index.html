@@ -84,20 +84,32 @@
             <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/kameshwaran-b-6543ba22a" target="_blank">LinkedIn</a></p>
             <p><i class="fas fa-map-marker-alt"></i> Porur, Chennai, Tamil Nadu</p>
         </section>
-    </div>
-        <div id="top-button" class="top-button">
-        ↑
-    </div>
     </main>
 
     <footer>
         <p>&copy; 2024 Kameshwaran B. All rights reserved.</p>
     </footer>
 
+<a href="#" class="go-top"><i class="fa fa-arrow-up"></i></a>
+
     <script>
         document.querySelector('.menu-icon').addEventListener('click', () => {
             document.getElementById('nav-links').classList.toggle('active');
         });
+        window.onscroll = function() {
+        const goTopButton = document.querySelector('.go-top');
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            goTopButton.classList.add('show');
+        } else {
+            goTopButton.classList.remove('show');
+        }
+    };
+
+    // Smooth scroll to the top
+    document.querySelector('.go-top').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
     </script>
 </body>
 </html>
