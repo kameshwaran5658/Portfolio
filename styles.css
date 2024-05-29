@@ -277,6 +277,28 @@ nav ul.active {
     color: #c81010;
 }
 
+.contact .whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25d366;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: #080808;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact .whatsapp i {
+    font-size: 24px;
+}
+
+.contact .whatsapp:hover {
+    background: #128c7e;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
 /* Footer */
 footer {
     text-align: center;
