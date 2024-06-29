@@ -17,6 +17,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="menu-icon">
@@ -78,6 +79,60 @@
             <p>Completed a dynamic [6 Weeks] internship at RETECH SOLUTIONS, immersing myself in the world of Full Stack Development. Collaborating with skilled professionals, I honed my expertise and gained hands-on experience in crafting robust and responsive web applications.</p>
         </section>
 
+        <section class="por">
+
+            <h1>Projects</h1>
+            <div id="projects" class="projects">
+           
+            <div class="project-card">
+                <div class="project-carousel">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-slide">
+                            <img src="p1image.png" alt="Project 1 Image 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="p1image2.png" alt="Project 1 Image 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="p1image3.png" alt="Project 1 Image 3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="p1image4.png" alt="Project 1 Image 4">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="p1image5.png" alt="Project 1 Image 4">
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Responsive Personal Portfolio</h3>
+                    <p>This Personal Portfolio Website showcases my skills, experience, and projects in a professional and visually appealing manner. It is designed to provide an overview of my technical and soft skills, my academic background, and my work experience, with a focus on my journey as a computer science student and web developer.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-carousel">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-slide">
+                            <img src="p2image1.png" alt="Project 2 Image 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="p2image2.png" alt="Project 2 Image 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="p2image3.png" alt="Project 2 Image 3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="p2image4.png" alt="Project 2 Image 4">
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Enhanced Visuals - Advanced Gallery</h3>
+                    <p>Enhanced Visuals - Advanced Gallery is a modern web application designed to showcase diverse collections of high-quality images. This gallery features dynamic filtering options, allowing users to browse through categories such as nature, architecture, and portraits with ease. Each image is displayed in an elegant layout optimized for both desktop and mobile viewing, ensuring a seamless user experience. The gallery also includes a lightbox feature for detailed image viewing and interaction. Developed using HTML, CSS with Bootstrap, and JavaScript, this project emphasizes visual appeal, usability, and performance, making it ideal for photography enthusiasts and professionals alike.</p>
+                </div>
+            </div>
+        </div>
+        </section>
         <section id="contact" class="contact">
             <h1>Contact</h1>
             <p><i class="fas fa-phone"></i> +91 - 7358245877</p>
@@ -119,6 +174,26 @@
                 });
             });
         });
+        const carouselWrappers = document.querySelectorAll('.carousel-wrapper');
+
+carouselWrappers.forEach(wrapper => {
+    const slides = wrapper.querySelectorAll('.carousel-slide');
+    let currentIndex = 0;
+    const slideCount = slides.length;
+    const slideHeight = slides[0].clientHeight;
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        updateSlidePosition();
+    }
+
+    function updateSlidePosition() {
+        const offset = -currentIndex * slideHeight;
+        wrapper.style.transform = `translateY(${offset}px)`;
+    }
+
+    setInterval(nextSlide, 3000); // Auto slide every 3 seconds
+});
 
     </script>
 </body>
