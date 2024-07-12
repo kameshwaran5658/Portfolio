@@ -521,7 +521,20 @@ footer {
 .view-project-btn i {
     margin-right: 10px;
 }
+.certificate-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #c81010; /* Example color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
 
+.certificate-btn:hover {
+    background-color: #e33333; /* Darker shade of the button color */
+}
 /* Media queries for responsiveness */
 
 @media (max-width: 768px) {
