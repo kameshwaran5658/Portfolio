@@ -495,6 +495,32 @@ footer {
     font-size: 1rem;
     color: aliceblue;
 }
+.view-project-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #c81010; /* Example color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view-project-btn:hover {
+    background-color: #e33333; /* Darker shade of the button color */
+}
+
+.view-project-btn:active {
+    background-color: #c81010;
+}
+
+.view-project-btn:focus {
+    outline: none;
+}
+
+.view-project-btn i {
+    margin-right: 10px;
+}
 
 /* Media queries for responsiveness */
 
